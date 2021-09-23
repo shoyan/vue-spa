@@ -1,18 +1,28 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="circle"></div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import { gsap } from "gsap";
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
-  }
+  mounted: function() {
+    gsap.to('.circle', {x: 500, duration: 3})
+  },
 }
 </script>
+
+<style scoped>
+div{
+  margin-top: 10em
+}
+
+.circle{
+  background-color:red;
+  height: 5em;
+  width: 5em;
+  border-radius: 100%
+}
+</style>
